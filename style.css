@@ -1,0 +1,201 @@
+@font-face {
+    font-family: ArialNova;
+    src: url(images/ArialNova-Regular.ttf);
+}
+
+@font-face {
+    font-family: ArialNovaBold;
+    src: url(images/ArialNova-Bold.ttf);
+}
+
+@font-face {
+    font-family: ArialNovaItalic;
+    src: url(images/ArialNova-Italic.ttf);
+}
+
+.welcomeimage {
+    --background-image: url("images/welcomephone.jpg");
+}
+
+.welcomeimage {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.motto {
+    background-image: url("images/motto_10x6.svg");
+    background-size: cover;
+    height: 42vh;
+    width: 70vh;
+    max-width: 90vw;
+    max-height: 54vw;
+    margin: 12px;
+    box-sizing: border-box;
+}
+
+.startpage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 12px 10%;
+    display: grid;
+    grid-template-columns: 32.5vw 15vw 32.5vw;
+    background-color: #f6e7e3;
+    color: black;
+    font-size: calc(12px + .7vh);
+    font-family: ArialNovaBold;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dropMenu {
+    background-color: #f6e7e3;
+    color: black;
+    font-size: calc(12px + .7vh);
+    font-family: ArialNova;
+    padding: 12px 10%;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+    width: 100vw;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.menuRight {
+    text-align: right;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.story {
+    margin-right: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: ArialNova, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    background-image: url(images/wavylogo.svg);
+    background-size: cover;
+    height: 6vh;
+    width: 12vh;
+    margin: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: right;
+}
+
+.header .fa {
+    --display: none;
+}
+
+.header .fa {
+    display: var(--display);
+}
+
+.icon {
+    text-align: right;
+}
+
+.fact1, .fact2, .fact3 {
+    height: calc(3vh + 2vw);
+    width: calc(3vh + 2vw);
+    background-image: url("images/facticon.svg");
+    background-size: cover;
+    position: absolute;    
+}
+
+.fact1 {
+    right: calc(50vw + 18vh);
+    bottom: 15vh;
+}
+
+.fact2 {
+    right: calc(50vw + 15vh);
+    bottom: 50vh;
+}
+
+.fact3 {
+    left: calc(50vw + 15vh);
+    bottom: 30vh;
+}
+
+.rot {
+    transform: rotate(135deg);
+    transition: 1s;
+}
+
+.funFact1, .funFact2, .funFact3 {
+    --factWidth: 100%;
+}
+
+.funFact1, .funFact2, .funFact3 {
+    position: absolute;
+    width: var(--factWidth);
+    background-color: #f6e7e3;
+    padding: 16px 3em;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    font-size: calc(12px + .3vw + .3vh);
+}
+
+p {
+    margin: 8px;
+}
+
+@media screen and (min-width: 600px) {
+    .funFact1, .funFact2, .funFact3 {
+        --factWidth: 350px;
+        max-width: 55vw;
+        height: calc(100% - 24px - 6vh);
+    }
+
+    .funFact1, .funFact2 {
+        right: 0;
+    }
+
+    .funFact3 {
+        left: 0;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .menuLeft, .menuRight {
+        display: none;
+    }
+
+    .header .fa {
+        --display: block;
+    }
+}
+
+@media screen and (min-aspect-ratio: 3/2) {
+    .welcomeimage {
+        --background-image: url("images/welcomelaptop.jpg");   
+    }
+
+    .motto {
+        display: none;
+    }
+}
